@@ -1,0 +1,13 @@
+fastapi==0.67.0
+pydantic==1.9.1
+celery==5.3.1
+huggingface-hub== 0.14.1
+torch==2.0.1
+newspaper3k==0.2.8
+trafilatura==1.6.1
+transformers==4.29.2
+uvicorn==0.18.1
+numpy
+python-dotenv
+eventlet
+celery[redis]
