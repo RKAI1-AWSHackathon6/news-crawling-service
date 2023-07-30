@@ -2,18 +2,20 @@ version: '3'
 services:
   keyword_extraction:
     image: news_crawling_service:latest
-    mem_limit: 4g
-    cpus: 6
     command: celery -A worker worker --loglevel=info -Q keyword-extraction-queue --concurrency=1 --pool=eventlet
     restart: always
+    env_file:
+      - .env
   crawling_api:
     image: news_crawling_service:latest
     mem_limit: 4g
     cpus: 6
-    command: python -m uvicorn main:app --host 0.0.0.0 --port 9995
+    command: python -m uvicorn app:app --host 0.0.0.0 --port 9995
     ports:
       - 9995:9995
     restart: always
+    env_file:
+      - .env
   crawling_worker:
     image: news_crawling_service:latest
     mem_limit: 4g
@@ -22,3 +24,5 @@ services:
     restart: always
     depends_on:
       - keyword_extraction
+    env_file:
+      - .env

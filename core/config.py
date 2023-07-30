@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Settings(BaseSettings):
-    REDIS_BROKER_URL: str
-    REDIS_BACKEND_URL: str
+    #REDIS_BROKER_URL: str
+    #REDIS_BACKEND_URL: str
+    REDIS_HOST: str
+    REDIS_PASSWORD: str
     POSTGRES_SERVER: str = "10.101.14.21:5432"
     POSTGRES_USER: str = 'postgres'
     POSTGRES_PASSWORD: str = 'postgres'

@@ -33,13 +33,11 @@ def crawl_new_articles_worker(newspaper_site):
                     article["source_id"] = source_id
                     article["created_at"] = time_util.get_now_time_stamp()
                     logger.info(f"Added article title {article['title']}")
-                    with open(f"./{article['title']}.txt","w") as f:
-                        f.write(article["body"])
                     article_schema = schemas.ArticleBase(**article)
-                    # added_article = db_crud.create_article(db=db,article=article_schema)
+                    added_article = db_crud.create_article(db=db,article=article_schema)
                     logger.info("Sending article to worker")
-                    # added_id = added_article.id 
-                    # task_id = celery_app.send_task("app.worker.processing", args=[added_id])
+                    added_id = added_article.id 
+                    task_id = celery_app.send_task("app.worker.processing", args=[added_id])
                 except Exception as e:
                     logger.info(f"Error: {e} when adding article {article['title']} ")
                     traceback.print_exc()

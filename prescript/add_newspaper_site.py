@@ -24,8 +24,14 @@ newspaper_db = {
     "https://www.coindesk.com/": "https://www.coindesk.com/arc/outboundfeeds/rss",
     "https://www.cryptodaily.co.uk": "https://www.cryptodaily.co.uk/feed",
     "https://cointelegraph.com/": "https://cointelegraph.com/rss",
-    "https://www.forbes.com/crypto-blockchain/": "https://www.forbes.com/crypto-blockchain/feed/",
-    "https://www.investing.com/": "https://www.investing.com/rss/news_301.rss"
+    "https://www.forbes.com/crypto-blockchain/": "https://www.forbes.com/crypto-blockchain/feed",
+    "https://www.investing.com/": "https://www.investing.com/rss/news_301.rss",
+    "https://www.coinspeaker.com/news": "https://www.coinspeaker.com/news/feed",
+    "https://crypto.news":"https://crypto.news/feed",
+    "https://thecryptotime.com":"https://thecryptotime.com/feed",
+    "https://cryptoslate.com":"https://cryptoslate.com/feed",
+    "https://blog.bitmex.com":"https://blog.bitmex.com/feed",
+    "https://coingeek.com/":"https://coingeek.com/feed",
 }
 
 def add_newspaper_site_test():
